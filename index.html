@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هدية سبيسيال بالاسم - صناعة يدوية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #b89244; /* اللون الذهبي */
+            --dark-color: #2c2c2c;
+            --light-bg: #f9f6f0;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-color);
+            line-height: 1.6;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* 1. معرض الصور هو اللول فالفوق كاع */
+        .product-gallery {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #000;
+        }
+
+        .main-img-container {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .main-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .thumbnails {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+            padding: 10px;
+            background-color: var(--white);
+        }
+
+        .thumb {
+            width: 100%;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .thumb:hover, .thumb.active {
+            border-color: var(--primary-color);
+            opacity: 0.9;
+        }
+
+        /* 2. الكتابة والمحتوى كيجيو تحت من الصور مباشرة */
+        .content-section {
+            padding: 30px 25px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #f0e9dd;
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .badge {
+            background-color: #e6dfd3;
+            color: #8a6d2f;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            font-size: 1.15rem;
+            color: #555;
+            margin-bottom: 25px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 35px;
+            background: #fafaf8;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .features-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+        }
+
+        .features-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .features-list li i {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        /* زر الواتساب */
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 18px 30px;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            text-align: center;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #20ba5a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* معلومات التوصيل */
+        .shipping-info {
+            margin-top: 30px;
+            background-color: #fff9f0;
+            border-right: 4px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        .shipping-info p {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        /* التجاوب مع الهواتف */
+        @media (max-width: 768px) {
+            .main-img-container { height: 380px; }
+            header h1 { font-size: 1.8rem; }
+            .content-section { padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="product-gallery">
+            <div class="main-img-container">
+                <img id="mainImage" src="img1.jpg" alt="هدية مخصصة بالاسم" class="main-img">
+            </div>
+            <div class="thumbnails">
+                <img src="img1.jpg" class="thumb active" onclick="changeImage(this)">
+                <img src="img2.jpg" class="thumb" onclick="changeImage(this)">
+                <img src="img3.jpg" class="thumb" onclick="changeImage(this)">
+                <img src="img4.jpg" class="thumb" onclick="changeImage(this)">
+                <img src="img5.jpg" class="thumb" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <div class="content-section">
+            
+            <header>
+                <span class="badge"><i class="fa-solid fa-pen-nib"></i> كتابة الاسم بخط عربي فخم</span>
+                <h1>الهدية المناسبة اللي عمرها تتنسى!</h1>
+                <p>صناعة يدوية متقنة بلمسة ذهبية فاخرة</p>
+            </header>
+
+            <p class="description">
+                إلا كنتي كتقلب على هدية سبيسيال ومختلفة تفرح بها الناس لعزاز عليك، هاد القطعة الفنية هي الاختيار الكامل! ماشي بحال أي حاجة كتشوفها فالأسواق، هادي كتصاوب بيديا قطعة بقطعة وبكل حب. كنكتبوا عليها الاسم اللي بغيتي بخط ذهبي بارز و ملموس.
+            </p>
+
+            <ul class="features-list">
+                <li><i class="fa-solid fa-star"></i> <b>كتابة مخصصة بالاسم:</b> كنكتبوا الاسم اللي بغيتي بالظبط.</li>
+                <li><i class="fa-solid fa-hands-holding"></i> <b>صناعة يدوية 100%:</b> عمل متقن وخاص بك بوحدك (ماشي طباعة عادية).</li>
+                <li><i class="fa-solid fa-gift"></i> <b>أحسن كادو:</b> فكرة مبتكرة وراقية للمناسبات والأعياد.</li>
+                <li><i class="fa-solid fa-gem"></i> <b>ديزاين عصري:</b> كيتناسب مع كاع الأذواق وكيضيف لمسة فخمة.</li>
+            </ul>
+
+            <a href="https://wa.me/212636231884?text=السلام%20عليكم،%20عجبني%20الكأس%20المخصص%20وبغيت%20نكوموندي%20واحد%20بالاسم" target="_blank" class="whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i> تواصل معايا على الواتساب واطلب دابا
+            </a>
+
+            <div class="shipping-info">
+                <p><strong><i class="fa-solid fa-truck"></i> كفاش غتوصل بالطلب ديالك؟</strong></p>
+                <p>🛵 التوصيل <b>فابور وبالمجان</b> يلا كنتي فمدينة <b>مراكش</b>.</p>
+                <p>🇲🇦 وكاين التوصيل لجميع المدن المغربية الأخرى حتى لباب الدار.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function changeImage(element) {
+            document.getElementById('mainImage').src = element.src;
+            let thumbs = document.getElementsByClassName('thumb');
+            for(let i=0; i<thumbs.length; i++) {
+                thumbs[i].classList.remove('active');
+            }
+            element.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
